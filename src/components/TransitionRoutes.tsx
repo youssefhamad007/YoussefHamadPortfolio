@@ -26,7 +26,7 @@ const PageContent = React.memo(({ pathname }: { pathname: string }) => {
       return <MemoizedWorkPage />;
     case "/YoussefHamadPortfolio/contact":
       return <MemoizedContactPage />;
-    case "/":
+    case "/YoussefHamadPortfolio/":
       return <Navigate to="/YoussefHamadPortfolio/home" replace />;
     default:
       return <Navigate to="/YoussefHamadPortfolio/home" replace />;
