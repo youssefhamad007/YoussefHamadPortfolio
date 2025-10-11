@@ -1,0 +1,81 @@
+import React, { useEffect, useRef, useState, } from "react";
+import { Routes, Route, useLocation, Navigate,useNavigationType } from "react-router-dom";
+import { motion , AnimatePresence} from "framer-motion";
+import HomePage from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
+import WorkPage from "../pages/WorkPage";
+import ContactPage from "../pages/ContactPage";
+
+// Constants
+const DURATION = 0.8;
+const EASE = 'easeInOut';
+
+// Wrapper for each page to apply animation
+const AnimatedPage = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.div
+      initial={{ y: '100vh' }}
+      animate={{ y: 0 }}
+      exit={{ y: '-100vh' }}
+      transition={{ duration: DURATION, ease: EASE }}
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 900,
+        willChange: 'transform',
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export default function TransitionRoutes() {
+  const location = useLocation();
+  const navigationType = useNavigationType(); // 'POP', 'PUSH', 'REPLACE'
+  const timeoutRef = useRef<number | null>(null);
+  const isFirst = useRef(true);
+
+  useEffect(() => {
+    // Skip on first load
+    if (isFirst.current) {
+      isFirst.current = false;
+      return;
+    }
+
+    // Optional: Only trigger black flash on PUSH/POP, not REPLACE
+    if (navigationType === 'REPLACE') return;
+
+    const prevBg = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = '#000';
+
+    timeoutRef.current = window.setTimeout(() => {
+      document.body.style.backgroundColor = prevBg;
+    }, DURATION * 1000);
+
+    return () => {
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [location, navigationType]);
+
+  return (
+    <>
+      {/* Keep body scrollable — no wrapper around Routes */}
+      <AnimatePresence  initial={false}>
+        <AnimatedPage key={location.pathname}>
+          <Routes location={location}>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </AnimatedPage>
+      </AnimatePresence>
+    </>
+  );
+}
