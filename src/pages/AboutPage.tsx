@@ -50,7 +50,7 @@ const AboutPage: React.FC = () => {
           className="block transition-transform duration-300 translate-x-[-10px] sm:translate-x-[-30px] md:translate-x-[-80px] lg:translate-x-[-90px] xl:translate-x-[-100px]">
             {firstName}
           </div>
-          <div className="block transition-transform duration-300 translate-x-[100px] sm:translate-x-[150px] md:translate-x-[150px] lg:translate-x-[250px] xl:translate-x-[320px]">
+          <div className="block transition-transform duration-300 translate-x-[150px] sm:translate-x-[250px] md:translate-x-[150px] lg:translate-x-[250px] xl:translate-x-[320px] w-[200px] sm:w-[200px] md:w-full lg:w-full xl:w-full">
             {lastName}
           </div>
         </motion.h1>
