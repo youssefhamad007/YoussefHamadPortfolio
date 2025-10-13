@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
                 FrontEnd React Developer
               </span>
               <Link
-                to="/#contact"
+                to="/YoussefHamadPortfolio/contact"
                 className="whitespace-nowrap hover:text-white transition-colors text-nowrap"
               >
                 Work with me
@@ -152,15 +152,15 @@ const AboutPage: React.FC = () => {
               </p>
               <p className="text-white font-medium sm:text-[1rem] text-[0.6rem]">
                 Have a project in mind?{" "}
-                <span className="underline underline-offset-4 decoration-white hover:text-sky-400 transition-colors cursor-pointer">
+                <span onClick={() => navigate('/YoussefHamadPortfolio/contact')}  className="underline underline-offset-4 decoration-white hover:text-sky-400 transition-colors cursor-pointer">
                   Let’s talk.
                 </span>
               </p>
 
               <button className="mt-4 border border-white text-white px-6 py-3 text-sm tracking-wider uppercase flex items-center gap-2  hover:bg-white hover:text-black transition-all duration-300"
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('/YoussefHamadPortfolio/contact')}
               >
-                Book a Session
+                Contact me
                 <span className="text-lg">→</span>
               </button>
               

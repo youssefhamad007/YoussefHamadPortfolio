@@ -16,7 +16,7 @@ const Work = () => {
             <EnhancedFlyingPosters items={projectImages} />
             <div className='flex justify-center items-center  text-white text-4xl'>
             <button className=" border border-white text-white px-6 py-3 text-sm tracking-wider uppercase flex items-center gap-2  hover:bg-white hover:text-black transition-all duration-300"
-              onClick={() => navigate('/work')}
+              onClick={() => navigate('/YoussefHamadPortfolio/work')}
               >
                 See All Work
                 <span className="text-lg">→</span>

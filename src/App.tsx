@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import "./styles/main.css";
 import ScrollPositionRestore from "./components/ScrollPositionRestore";
 import SiteNav from "./components/SiteNav";

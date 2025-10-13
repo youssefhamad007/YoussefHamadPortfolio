@@ -24,22 +24,22 @@ const Services = () => {
   const services = React.useMemo(
     () => [
       {
-        link: '#',
+        link: '/YoussefHamadPortfolio/about',
         texts: ['Responsive Design', 'Mobile-first layouts', 'Tailwind'],
         images: [responsive, responsivePreview, tailwind]
       },
       {
-        link: '#',
+        link: '/YoussefHamadPortfolio/about',
         texts: ['React Development', 'Scalable SPAs'],
         images: [react, reactPreview]
       },
       {
-        link: '#',
+        link: '/YoussefHamadPortfolio/about',
         texts: ['Next.js Apps', 'SEO & performance'],
         images: [nextjs, seo]
       },
       {
-        link: '#',
+        link: '/YoussefHamadPortfolio/about',
         texts: ['UI/UX Prototyping', 'Pixel-perfect designs'],
         images: [figma, pixelPerfect]
       }

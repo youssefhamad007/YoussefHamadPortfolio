@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiInstagram } from 'react-icons/fi';
-import { FaBehance, FaTelegram, FaWhatsapp } from 'react-icons/fa';
+import { FaBehance,FaWhatsapp,FaRegCircle } from 'react-icons/fa';
+import { SiUpwork } from "react-icons/si";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -50,9 +51,9 @@ export default function ContactPage() {
   const socialLinks = [
     { icon: FiLinkedin, href: 'https://linkedin.com/in/youssef-hamad-uxui', color: 'hover:bg-blue-500/20' },
     { icon: FiGithub, href: 'https://github.com/youssefhamad007', color: 'hover:bg-gray-500/20' },
-    { icon: FaBehance, href: 'https://behance.net/yourprofile', color: 'hover:bg-blue-400/20' },
-    { icon: FiInstagram, href: 'https://instagram.com/yourprofile', color: 'hover:bg-pink-500/20' },
-    { icon: FaTelegram, href: 'https://t.me/yourprofile', color: 'hover:bg-blue-300/20' },
+    { icon: FaRegCircle, href: 'https://mostaql.com/u/Youssef_Hamad1', color: 'hover:bg-blue-400/20' },
+    { icon: FiInstagram, href: 'https://www.instagram.com/youssif_hamad?igsh=cnEyYzNKOHNnajJI', color: 'hover:bg-pink-500/20' },
+    { icon: SiUpwork, href: 'https://www.upwork.com/freelancers/~0192c23697639edefc?mp_source=share', color: 'hover:bg-blue-300/20' },
     { icon: FaWhatsapp, href: 'https://wa.me/201200745033', color: 'hover:bg-green-500/20' }
   ];
 
@@ -123,6 +124,7 @@ export default function ContactPage() {
                 <motion.a
                   key={index}
                   href={social.href}
+                  target="_blank"
                   className={`p-4 rounded-xl bg-white/5 border border-white/10 ${social.color} transition-all duration-300 hover:scale-110`}
                   whileHover={{ rotate: 5 }}
                 >
