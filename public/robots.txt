@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://youssefhamad007.github.io/YoussefHamadPortfolio/sitemap.xml
